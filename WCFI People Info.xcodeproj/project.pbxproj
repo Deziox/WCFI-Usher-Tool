@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2D07CDEE21DEC33F0089701D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2D07CDED21DEC33F0089701D /* GoogleService-Info.plist */; };
+		2D07CDF021E160D80089701D /* FadeSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D07CDEF21E160D80089701D /* FadeSegue.swift */; };
 		2D3239BF21CFED9B006DFEA3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3239BE21CFED9B006DFEA3 /* AppDelegate.swift */; };
 		2D3239C121CFED9B006DFEA3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3239C021CFED9B006DFEA3 /* LoginViewController.swift */; };
 		2D3239C421CFED9B006DFEA3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D3239C221CFED9B006DFEA3 /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		2D07CDED21DEC33F0089701D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2D07CDEF21E160D80089701D /* FadeSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadeSegue.swift; sourceTree = "<group>"; };
 		2D3239BB21CFED9B006DFEA3 /* WCFI People Info.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WCFI People Info.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D3239BE21CFED9B006DFEA3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2D3239C021CFED9B006DFEA3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				2D3239BE21CFED9B006DFEA3 /* AppDelegate.swift */,
 				2D3239C021CFED9B006DFEA3 /* LoginViewController.swift */,
 				2D3239C221CFED9B006DFEA3 /* Main.storyboard */,
+				2D07CDEF21E160D80089701D /* FadeSegue.swift */,
 				2D3239C521CFED9D006DFEA3 /* Assets.xcassets */,
 				2D3239C721CFED9D006DFEA3 /* LaunchScreen.storyboard */,
 				2D3239CA21CFED9D006DFEA3 /* Info.plist */,
@@ -217,6 +220,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D3239C121CFED9B006DFEA3 /* LoginViewController.swift in Sources */,
+				2D07CDF021E160D80089701D /* FadeSegue.swift in Sources */,
 				2D3239BF21CFED9B006DFEA3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

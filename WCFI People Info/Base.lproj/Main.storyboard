@@ -113,7 +113,7 @@
                     <connections>
                         <outlet property="passText" destination="1JN-Lt-Dej" id="2t1-Uw-UaP"/>
                         <outlet property="userText" destination="Qaj-Hw-f9l" id="N4A-Yp-MIb"/>
-                        <segue destination="Ija-fE-inz" kind="show" identifier="menuSegue" id="5bS-tA-5qy"/>
+                        <segue destination="Ija-fE-inz" kind="custom" identifier="menuSegue" customClass="FadeSegue" customModule="WCFI_People_Info" customModuleProvider="target" id="3d0-TR-ppU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
