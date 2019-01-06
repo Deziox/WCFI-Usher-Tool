@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		2D07CDEE21DEC33F0089701D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2D07CDED21DEC33F0089701D /* GoogleService-Info.plist */; };
 		2D07CDF021E160D80089701D /* FadeSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D07CDEF21E160D80089701D /* FadeSegue.swift */; };
+		2D07CDF421E167690089701D /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D07CDF321E167690089701D /* MenuViewController.swift */; };
+		2D07CDF621E18D7C0089701D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D07CDF521E18D7C0089701D /* SettingsViewController.swift */; };
+		2D07CDF821E19BEA0089701D /* LookupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D07CDF721E19BEA0089701D /* LookupViewController.swift */; };
 		2D3239BF21CFED9B006DFEA3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3239BE21CFED9B006DFEA3 /* AppDelegate.swift */; };
 		2D3239C121CFED9B006DFEA3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3239C021CFED9B006DFEA3 /* LoginViewController.swift */; };
 		2D3239C421CFED9B006DFEA3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D3239C221CFED9B006DFEA3 /* Main.storyboard */; };
@@ -20,6 +23,9 @@
 /* Begin PBXFileReference section */
 		2D07CDED21DEC33F0089701D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2D07CDEF21E160D80089701D /* FadeSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadeSegue.swift; sourceTree = "<group>"; };
+		2D07CDF321E167690089701D /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		2D07CDF521E18D7C0089701D /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		2D07CDF721E19BEA0089701D /* LookupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookupViewController.swift; sourceTree = "<group>"; };
 		2D3239BB21CFED9B006DFEA3 /* WCFI People Info.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WCFI People Info.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D3239BE21CFED9B006DFEA3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2D3239C021CFED9B006DFEA3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -67,7 +73,10 @@
 			children = (
 				2D3239BE21CFED9B006DFEA3 /* AppDelegate.swift */,
 				2D3239C021CFED9B006DFEA3 /* LoginViewController.swift */,
+				2D07CDF321E167690089701D /* MenuViewController.swift */,
 				2D3239C221CFED9B006DFEA3 /* Main.storyboard */,
+				2D07CDF721E19BEA0089701D /* LookupViewController.swift */,
+				2D07CDF521E18D7C0089701D /* SettingsViewController.swift */,
 				2D07CDEF21E160D80089701D /* FadeSegue.swift */,
 				2D3239C521CFED9D006DFEA3 /* Assets.xcassets */,
 				2D3239C721CFED9D006DFEA3 /* LaunchScreen.storyboard */,
@@ -106,6 +115,7 @@
 				2D3239B821CFED9B006DFEA3 /* Frameworks */,
 				2D3239B921CFED9B006DFEA3 /* Resources */,
 				DEA24F7EDE282241911DEDF1 /* [CP] Embed Pods Frameworks */,
+				C393EEF8BC1D3102B1D981A7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -186,6 +196,28 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		C393EEF8BC1D3102B1D981A7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-WCFI People Info/Pods-WCFI People Info-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseFirestore/gRPCCertificates-Firestore.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates-Firestore.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WCFI People Info/Pods-WCFI People Info-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		DEA24F7EDE282241911DEDF1 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -195,16 +227,26 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-WCFI People Info/Pods-WCFI People Info-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -222,6 +264,9 @@
 				2D3239C121CFED9B006DFEA3 /* LoginViewController.swift in Sources */,
 				2D07CDF021E160D80089701D /* FadeSegue.swift in Sources */,
 				2D3239BF21CFED9B006DFEA3 /* AppDelegate.swift in Sources */,
+				2D07CDF621E18D7C0089701D /* SettingsViewController.swift in Sources */,
+				2D07CDF821E19BEA0089701D /* LookupViewController.swift in Sources */,
+				2D07CDF421E167690089701D /* MenuViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

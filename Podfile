@@ -8,4 +8,5 @@ target 'WCFI People Info' do
   # Pods for WCFI People Info
     pod 'Firebase/Core'
     pod 'Firebase/Auth'
+    pod 'Firebase/Firestore'
 end
