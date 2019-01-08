@@ -14,6 +14,7 @@ class LookupViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     
     let myPickerData = ["Last Name","First Name","Email","Birthday","BS Group"]
     var initLabelText = "Last Name"
+    var forwardSeg:Bool = true
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -40,15 +41,18 @@ class LookupViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         //let thePicker = UIPickerView()
+        self.forwardSeg = true
         self.pickerViewShower.isHidden = true
         self.pickerViewShower.alpha = 0
         self.categoryLabel.text = initLabelText
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let recieverVC = segue.destination as! TableViewController
-        recieverVC.category = self.categoryLabel.text?.components(separatedBy: " ")[0]
-        recieverVC.searchParams = self.searchParamsTF.text
+        if(forwardSeg){
+            let recieverVC = segue.destination as! TableViewController
+            recieverVC.category = self.categoryLabel.text?.components(separatedBy: " ")[0]
+            recieverVC.searchParams = self.searchParamsTF.text
+        }
     }
     
     @IBAction func searchButton(_ sender: UIButton) {
@@ -69,6 +73,12 @@ class LookupViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         }
     }
     
+    @IBAction func backButton(_ sender: Any) {
+        self.forwardSeg = false
+        self.performSegue(withIdentifier: "backSegue", sender: nil)
+    }
+    
+    
     /*
     @IBAction func testAdd(_ sender: UIButton) {
         //var ref: DocumentReference? = nil
@@ -83,6 +93,7 @@ class LookupViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         displayData()
     }
     */
+    
     /*
     func displayData(){
         self.testScroll.text = ""
