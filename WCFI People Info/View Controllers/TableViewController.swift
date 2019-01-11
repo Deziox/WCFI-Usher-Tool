@@ -49,9 +49,18 @@ class TableViewController: UITableViewController {
                         }
                     }
                 }
+                self.sortMembers()
                 self.tableView.reloadData()
             }
         }
+    }
+    
+    func sortMembers(){
+        let test = self.testThing.sorted { (a,b) -> Bool in
+            return (a["Last"] as! String) < (b["Last"] as! String)
+        }
+        self.testThing = test
+        
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

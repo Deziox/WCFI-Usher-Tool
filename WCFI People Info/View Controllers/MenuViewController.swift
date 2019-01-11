@@ -16,8 +16,6 @@ class MenuViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
-    
     // MARK: - Navigation
     @IBAction func settings(_ sender: UIButton) {
         performSegue(withIdentifier: "settingsSegue", sender: nil)
@@ -27,7 +25,10 @@ class MenuViewController: UIViewController {
         performSegue(withIdentifier: "lookupSegue", sender: nil)
     }
     
-     
+    @IBAction func signInButton(_ sender: UIButton) {
+        performSegue(withIdentifier: "signSegue", sender: nil)
+    }
+
     /*
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

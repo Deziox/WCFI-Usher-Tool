@@ -51,7 +51,7 @@ class LookupViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         if(forwardSeg){
             let recieverVC = segue.destination as! TableViewController
             recieverVC.category = self.categoryLabel.text?.components(separatedBy: " ")[0]
-            recieverVC.searchParams = self.searchParamsTF.text
+            recieverVC.searchParams = self.searchParamsTF.text?.lowercased()
         }
     }
     

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ija-fE-inz">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -172,13 +172,26 @@
                                         <state key="normal" title="Family/Member sign-in">
                                             <color key="titleColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="signInButton:" destination="Ija-fE-inz" eventType="touchUpInside" id="Ntf-SV-myq"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="94h-9E-HOZ">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="94h-9E-HOZ">
                                         <rect key="frame" x="0.0" y="116" width="343" height="36"/>
                                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
                                         <state key="normal" title="Edit Members">
                                             <color key="titleColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8nq-2k-bFP">
+                                        <rect key="frame" x="0.0" y="164" width="343" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
+                                        <state key="normal" title="Settings">
+                                            <color key="titleColor" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="settings:" destination="Ija-fE-inz" eventType="touchUpInside" id="ip2-ak-5hn"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b0c-cS-A8N">
                                         <rect key="frame" x="0.0" y="337" width="343" height="30"/>
@@ -193,16 +206,6 @@
                                         <state key="normal" title="*note: I have to implement faithlife bulletin API don't forget boi">
                                             <color key="titleColor" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8nq-2k-bFP">
-                                        <rect key="frame" x="0.0" y="164" width="343" height="36"/>
-                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
-                                        <state key="normal" title="Settings">
-                                            <color key="titleColor" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="settings:" destination="Ija-fE-inz" eventType="touchUpInside" id="ip2-ak-5hn"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -244,11 +247,77 @@
                     <connections>
                         <segue destination="Wtt-6G-Kv1" kind="custom" identifier="settingsSegue" customClass="FadeSegue" customModule="WCFI_People_Info" customModuleProvider="target" id="KVr-cF-GAe"/>
                         <segue destination="XGv-g6-zbf" kind="custom" identifier="lookupSegue" customClass="FadeSegue" customModule="WCFI_People_Info" customModuleProvider="target" id="RO3-Qa-BNJ"/>
+                        <segue destination="D8y-eH-CT6" kind="custom" identifier="signSegue" customClass="FadeSegue" customModule="WCFI_People_Info" customModuleProvider="target" id="IeK-lL-g5A"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4ej-Ew-vF8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1902" y="-143"/>
+        </scene>
+        <!--Sign In View Controller-->
+        <scene sceneID="qZn-4g-pgG">
+            <objects>
+                <viewController id="D8y-eH-CT6" customClass="SignInViewController" customModule="WCFI_People_Info" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KqS-gB-jdj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Gb9-QY-IaK">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SignIdentifier" id="v6y-on-KFf" customClass="SignInTableViewCell" customModule="WCFI_People_Info" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="v6y-on-KFf" id="ySA-ds-m2U">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.80875152350000001" green="0.91351181270000004" blue="0.92157202959999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t1E-QF-qTh">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LJL-19-GSg">
+                                        <rect key="frame" x="8" y="0.0" width="38" height="44"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                        <state key="normal" title="back"/>
+                                        <connections>
+                                            <action selector="backButton:" destination="D8y-eH-CT6" eventType="touchUpInside" id="j5E-Ju-rQi"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.80875152350000001" green="0.91351181270000004" blue="0.92157202959999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="LJL-19-GSg" secondAttribute="bottom" id="Cw0-3H-drx"/>
+                                    <constraint firstItem="LJL-19-GSg" firstAttribute="leading" secondItem="t1E-QF-qTh" secondAttribute="leading" constant="8" id="K3j-Ig-rHg"/>
+                                    <constraint firstItem="LJL-19-GSg" firstAttribute="top" secondItem="t1E-QF-qTh" secondAttribute="top" id="hzx-Wg-aFI"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.80875152350000001" green="0.91351181270000004" blue="0.92157202959999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="t1E-QF-qTh" firstAttribute="top" secondItem="Nq3-Ny-LZT" secondAttribute="top" id="GQu-I8-t2O"/>
+                            <constraint firstItem="Nq3-Ny-LZT" firstAttribute="trailing" secondItem="Gb9-QY-IaK" secondAttribute="trailing" id="NnV-Fz-Vah"/>
+                            <constraint firstItem="Gb9-QY-IaK" firstAttribute="top" secondItem="Nq3-Ny-LZT" secondAttribute="top" constant="44" id="chf-ed-zYw"/>
+                            <constraint firstAttribute="trailing" secondItem="t1E-QF-qTh" secondAttribute="trailing" id="emr-qG-Yhi"/>
+                            <constraint firstItem="Nq3-Ny-LZT" firstAttribute="bottom" secondItem="Gb9-QY-IaK" secondAttribute="bottom" id="mC5-oK-FxC"/>
+                            <constraint firstItem="Gb9-QY-IaK" firstAttribute="leading" secondItem="Nq3-Ny-LZT" secondAttribute="leading" id="o3t-SY-Ji0"/>
+                            <constraint firstItem="t1E-QF-qTh" firstAttribute="leading" secondItem="Nq3-Ny-LZT" secondAttribute="leading" id="vlZ-2b-Jh2"/>
+                            <constraint firstItem="Gb9-QY-IaK" firstAttribute="top" secondItem="t1E-QF-qTh" secondAttribute="bottom" id="yD7-9f-SEp"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Nq3-Ny-LZT"/>
+                    </view>
+                    <connections>
+                        <outlet property="signInTableView" destination="Gb9-QY-IaK" id="oTy-b8-Llb"/>
+                        <segue destination="Ija-fE-inz" kind="custom" identifier="backSegue" customClass="FadeSegue" customModule="WCFI_People_Info" customModuleProvider="target" id="i9Z-if-EXh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xsg-Hq-bDz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3072.8000000000002" y="-919.79010494752629"/>
         </scene>
         <!--Lookup-->
         <scene sceneID="CZK-K8-jjf">
@@ -586,8 +655,7 @@
         <image name="WCFI" width="107.5" height="33"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ptQ-4T-atI"/>
         <segue reference="6NP-8u-zA2"/>
-        <segue reference="nTC-0w-GUm"/>
+        <segue reference="i9Z-if-EXh"/>
     </inferredMetricsTieBreakers>
 </document>
