@@ -17,7 +17,10 @@ class SignInViewController: UIViewController {
     var finalMembers:[(String,[String])] = []
     var numberOfMembers : Int = 0
     let db = Firestore.firestore()
+    let util = UTUtilities()
     var attendance:[String:Bool] = [:]
+    var attendanceData:[String:Bool] = [:]
+    var date:(String,String) = ("","")
     
     @IBOutlet weak var signInTableView: UITableView!
     
@@ -25,10 +28,60 @@ class SignInViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         //self.signInTableView.reloadData()
+        reset()
+    }
+    
+    func reset(){
+        updateDate()
         checkAttendance()
+        print("te \(self.attendance)")
+        updateAttendanceData()
         signInTableView.delegate = self
         signInTableView.dataSource = self
         loadData()
+    }
+    
+    func updateAttendanceData(){
+        self.db.collection("AttendanceData").getDocuments{(querySnapshot,err) in
+            if let err = err{
+                print("Error getting documents: \(err)")
+            }else {
+                let dateCheck = "\(self.date.0)/\(self.date.1)"
+                for document in querySnapshot!.documents{
+                    if(dateCheck == (document.data()["Date"] as! String)){
+                        self.attendanceData[(document.data()["indexId"] as! String)] = (document.data()["Attendance"] as! Bool)
+                    }
+                }
+            }
+        }
+    }
+    
+    func updateDate(){
+        let formatter = DateFormatter()
+        // initially set the format based on your datepicker date / server String
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let myString = formatter.string(from: Date())
+        let yourDate = formatter.date(from: myString)
+        formatter.dateFormat = "dd-MMM-yyyy"
+        let myStringafd = formatter.string(from: yourDate!)
+        let mySubstring = myStringafd.prefix(6).suffix(3)
+        //let finDate = "\(self.util.month[String(mySubstring)]!)/\(myStringafd.prefix(2))"
+        self.date = (self.util.month[String(mySubstring)]!,String(myStringafd.prefix(2)))
+        print("date tester: \(self.date)")
+    }
+    
+    func checkAttendance(){
+        db.collection("AttendanceData").getDocuments{ (querySnapshot, err) in
+            if let err = err{
+                print("Error getting documents: \(err)")
+            }else{
+                for document in querySnapshot!.documents{
+                    //print(document.data()["Attendance"] as! Bool)
+                    self.attendance[(document.data()["indexId"] as! String)] = (document.data()["Attendance"] as! Bool)
+                }
+                //print(self.attendance)
+            }
+        }
     }
     
     @IBAction func backButton(_ sender: Any) {
@@ -51,12 +104,12 @@ extension SignInViewController: UITableViewDataSource, UITableViewDelegate{
     
     func numberOfSections(in tableView: UITableView) -> Int {
         //loadData()
-        print("test 4 \(self.sections)")
+        //print("test 4 \(self.sections)")
         return sections.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("test3 \(self.numberOfMembers)")
+        //print("test3 \(self.numberOfMembers)")
         return self.finalMembers[section].1.count
     }
     
@@ -104,60 +157,66 @@ extension SignInViewController: UITableViewDataSource, UITableViewDelegate{
         let nameIndex = finalMembers[indexPath.section].1[indexPath.row].components(separatedBy: " ")
         cell.textLabel!.text = nameIndex[0]
         cell.listIndex = nameIndex[1]
-        if(attendance[nameIndex[1]]!){
+        if(attendance[nameIndex[1]] ?? false){
             cell.accessoryType = .checkmark
         }
         return cell
-    }
-    
-    func checkAttendance(){
-        db.collection("Members").getDocuments{ (querySnapshot, err) in
-            if let err = err{
-                print("Error getting documents: \(err)")
-            }else{
-                for document in querySnapshot!.documents{
-                    //print(document.data()["Attendance"] as! Bool)
-                    self.attendance[document.documentID] = (document.data()["Attendance"] as! Bool)
-                }
-                print(self.attendance)
-            }
-        }
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return self.sections[section]
     }
     
+    func checkAttendanceData(memberToCheck:String) -> Bool{
+        //check if database container contains member for that specific date
+        if(self.attendanceData[memberToCheck] != nil){return true}
+        return false
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        //checkAttendanceData((cell as! SignInTableViewCell).listIndex)
+        var att:Bool = false
         if let cell = tableView.cellForRow(at: indexPath as IndexPath) {
+            
             if cell.accessoryType == .checkmark{
                 cell.accessoryType = .none
-                
-                self.db.collection("Members").document((cell as! SignInTableViewCell).listIndex).updateData([
+                /*
+                self.db.collection("AttendanceData").document((cell as! SignInTableViewCell).listIndex).updateData([
                     "Attendance": false
+                    
                 ]) { err in
                     if let err = err {
                         print("Error updating document: \(err)")
                     } else {
                         print("Document successfully updated")
                     }
-                }
+                }*/
             }
             else{
                 cell.accessoryType = .checkmark
-                
-                self.db.collection("Members").document((cell as! SignInTableViewCell).listIndex).updateData([
-                    "Attendance": true
-                ]) { err in
-                    if let err = err {
-                        print("Error updating document: \(err)")
-                    } else {
-                        print("Document successfully updated")
-                    }
-                }
+                att = true
             }
             
+            let indexDate = "\(self.date.0),\(self.date.1)"
+            let indexId = (cell as! SignInTableViewCell).listIndex
+            if(checkAttendanceData(memberToCheck: (cell as! SignInTableViewCell).listIndex)){
+                //  change existing to value of att
+                //self.db.collection("AttendanceData")
+                    //.whereField("indexId", isEqualTo: (cell as! SignInTableViewCell).listIndex)
+                    //.whereField("Date", isEqualTo: self.date)
+                self.db.collection("AttendanceData").document("\(indexDate) \(indexId)").updateData([
+                    "Attendance":att
+                ])
+            }else{
+                //  add to database; set to value of att
+                self.db.collection("AttendanceData").document("\(indexDate) \(indexId)").setData([
+                    "Attendance":att,
+                    "Date":"\(self.date.0)/\(self.date.1)",
+                    "indexId":"\((cell as! SignInTableViewCell).listIndex)"
+                    ])
+            }
+            self.reset()
         }
         
     }

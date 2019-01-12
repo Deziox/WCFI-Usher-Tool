@@ -17,6 +17,7 @@
 		2D28DBDB21E52C1A00C8A4B2 /* LookupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D28DBDA21E52C1A00C8A4B2 /* LookupTableViewCell.swift */; };
 		2D28DBE121E65F6300C8A4B2 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D28DBE021E65F6300C8A4B2 /* SignInViewController.swift */; };
 		2D28DBE321E660BA00C8A4B2 /* SignInTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D28DBE221E660BA00C8A4B2 /* SignInTableViewCell.swift */; };
+		2D28DBE521E8FAC300C8A4B2 /* UTUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D28DBE421E8FAC300C8A4B2 /* UTUtilities.swift */; };
 		2D3239BF21CFED9B006DFEA3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3239BE21CFED9B006DFEA3 /* AppDelegate.swift */; };
 		2D3239C121CFED9B006DFEA3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3239C021CFED9B006DFEA3 /* LoginViewController.swift */; };
 		2D3239C421CFED9B006DFEA3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D3239C221CFED9B006DFEA3 /* Main.storyboard */; };
@@ -38,6 +39,7 @@
 		2D28DBDA21E52C1A00C8A4B2 /* LookupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookupTableViewCell.swift; sourceTree = "<group>"; };
 		2D28DBE021E65F6300C8A4B2 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		2D28DBE221E660BA00C8A4B2 /* SignInTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInTableViewCell.swift; sourceTree = "<group>"; };
+		2D28DBE421E8FAC300C8A4B2 /* UTUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UTUtilities.swift; sourceTree = "<group>"; };
 		2D3239BB21CFED9B006DFEA3 /* WCFI People Info.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WCFI People Info.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D3239BE21CFED9B006DFEA3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2D3239C021CFED9B006DFEA3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 				2D07CDEF21E160D80089701D /* FadeSegue.swift */,
 				2D28DBDA21E52C1A00C8A4B2 /* LookupTableViewCell.swift */,
 				2D28DBE221E660BA00C8A4B2 /* SignInTableViewCell.swift */,
+				2D28DBE421E8FAC300C8A4B2 /* UTUtilities.swift */,
 			);
 			path = Modifiers;
 			sourceTree = "<group>";
@@ -306,6 +309,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D28DBE321E660BA00C8A4B2 /* SignInTableViewCell.swift in Sources */,
+				2D28DBE521E8FAC300C8A4B2 /* UTUtilities.swift in Sources */,
 				2D3239C121CFED9B006DFEA3 /* LoginViewController.swift in Sources */,
 				2D28DBDB21E52C1A00C8A4B2 /* LookupTableViewCell.swift in Sources */,
 				2D07CDF021E160D80089701D /* FadeSegue.swift in Sources */,
