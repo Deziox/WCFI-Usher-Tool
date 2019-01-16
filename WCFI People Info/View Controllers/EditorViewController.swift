@@ -8,7 +8,8 @@
 
 import UIKit
 
-class EditorViewController: UIViewController {
+class EditorViewController: UIViewController ,UIPickerViewDelegate,UIPickerViewDataSource{
+    
 
     var firstName:String = ""
     var lastName:String = ""
@@ -17,6 +18,12 @@ class EditorViewController: UIViewController {
     var bibleStudy:String = ""
     var indexId:String = ""
     
+    let month:[String] = (Array(1...12)).map{ String(format: "%02d", $0) }
+    let day:[String] = (Array(1...31)).map{ String(format: "%02d", $0) }
+    let bSG:[String] = ["Chester","Delaware","Ewing","Hamilton","Lodi","Monroe","North Brunswick","Princeton","Riegelsville","Somerset","Tinton"]
+    let bSGtoIndex:[String:Int] = ["Chester":0,"Delaware":1,"Ewing":2,"Hamilton":3,"Lodi":4,"Monroe":5,"North Brunswick":6,"Princeton":7,"Riegelsville":8,"Somerset":9,"Tinton":10]
+    //String(format: "%02d", myInt)
+    
     //MARK: Text fields
     @IBOutlet weak var firstNameText: UITextField!
     @IBOutlet weak var lastNameText: UITextField!
@@ -24,6 +31,8 @@ class EditorViewController: UIViewController {
     @IBOutlet weak var birthdayText: UITextField!
     @IBOutlet weak var bibleStudyText: UITextField!
     
+    let birthdayPicker = UIPickerView()
+    let bSGPicker = UIPickerView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +42,60 @@ class EditorViewController: UIViewController {
         emailText.text = email
         birthdayText.text = birthday
         bibleStudyText.text = bibleStudy
+        
+        birthdayPicker.delegate = self
+        birthdayText.inputView = birthdayPicker
+        birthdayPicker.selectRow(Int(birthday.prefix(2))! - 1, inComponent: 0, animated: true)
+        birthdayPicker.selectRow(Int(birthday.suffix(2))! - 1, inComponent: 1, animated: true)
+        
+        bSGPicker.delegate = self
+        bSGPicker.selectRow(bSGtoIndex[bibleStudy]!, inComponent: 0, animated: true)
+        bibleStudyText.inputView = bSGPicker
+    }
+
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        if(pickerView == birthdayPicker){
+            return 2
+        }else{
+            return 1
+        }
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        if(pickerView == birthdayPicker){
+            if(component == 0){
+                return month.count
+            }else{
+                return day.count
+            }
+        }else{
+            return bSG.count
+        }
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        if(pickerView == birthdayPicker){
+            if(component == 0){
+                return month[row]
+            }else{
+                return day[row]
+            }
+        }else{
+            print("test thing")
+            return bSG[row]
+        }
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if(pickerView == birthdayPicker){
+            let pickedMonth = month[pickerView.selectedRow(inComponent: 0)]
+            let pickedDay = day[pickerView.selectedRow(inComponent: 1)]
+            birthday = "\(pickedMonth)/\(pickedDay)"
+            birthdayText.text = birthday
+        }else{
+            bibleStudy = bSG[row]
+            bibleStudyText.text = bibleStudy
+        }
     }
     
     @IBAction func backButton(_ sender: UIButton) {

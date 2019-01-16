@@ -21,6 +21,7 @@
 		2D28DBE721E97E0100C8A4B2 /* EditMembersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D28DBE621E97E0100C8A4B2 /* EditMembersViewController.swift */; };
 		2D2F83B221ED0DD5002AC448 /* EditMembersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2F83B121ED0DD5002AC448 /* EditMembersTableViewCell.swift */; };
 		2D2F83B421EE60CB002AC448 /* EditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2F83B321EE60CB002AC448 /* EditorViewController.swift */; };
+		2D2F83B621EF9522002AC448 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2F83B521EF9522002AC448 /* HelpViewController.swift */; };
 		2D3239BF21CFED9B006DFEA3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3239BE21CFED9B006DFEA3 /* AppDelegate.swift */; };
 		2D3239C121CFED9B006DFEA3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3239C021CFED9B006DFEA3 /* LoginViewController.swift */; };
 		2D3239C421CFED9B006DFEA3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D3239C221CFED9B006DFEA3 /* Main.storyboard */; };
@@ -46,6 +47,7 @@
 		2D28DBE621E97E0100C8A4B2 /* EditMembersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMembersViewController.swift; sourceTree = "<group>"; };
 		2D2F83B121ED0DD5002AC448 /* EditMembersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMembersTableViewCell.swift; sourceTree = "<group>"; };
 		2D2F83B321EE60CB002AC448 /* EditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorViewController.swift; sourceTree = "<group>"; };
+		2D2F83B521EF9522002AC448 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		2D3239BB21CFED9B006DFEA3 /* WCFI People Info.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WCFI People Info.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D3239BE21CFED9B006DFEA3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2D3239C021CFED9B006DFEA3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 		2D28DBD521E4CC2F00C8A4B2 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				2D2F83B521EF9522002AC448 /* HelpViewController.swift */,
 				2D28DBD821E4F8D000C8A4B2 /* TableViewController.swift */,
 				2D07CDF521E18D7C0089701D /* SettingsViewController.swift */,
 				2D3239C021CFED9B006DFEA3 /* LoginViewController.swift */,
@@ -328,6 +331,7 @@
 				2D28DBD921E4F8D000C8A4B2 /* TableViewController.swift in Sources */,
 				2D3239BF21CFED9B006DFEA3 /* AppDelegate.swift in Sources */,
 				2D07CDF621E18D7C0089701D /* SettingsViewController.swift in Sources */,
+				2D2F83B621EF9522002AC448 /* HelpViewController.swift in Sources */,
 				2D07CDF821E19BEA0089701D /* LookupViewController.swift in Sources */,
 				2D28DBE121E65F6300C8A4B2 /* SignInViewController.swift in Sources */,
 				2D2F83B421EE60CB002AC448 /* EditorViewController.swift in Sources */,

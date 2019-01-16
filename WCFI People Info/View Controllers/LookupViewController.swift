@@ -48,10 +48,15 @@ class LookupViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if(forwardSeg){
-            let recieverVC = segue.destination as! TableViewController
-            recieverVC.category = self.categoryLabel.text?.components(separatedBy: " ")[0]
-            recieverVC.searchParams = self.searchParamsTF.text?.lowercased()
+        if(segue.identifier != "helpLookupSegue"){
+            if(forwardSeg){
+                let recieverVC = segue.destination as! TableViewController
+                recieverVC.category = self.categoryLabel.text?.components(separatedBy: " ")[0]
+                recieverVC.searchParams = self.searchParamsTF.text?.lowercased()
+            }
+        }else{
+            let recieverVC = segue.destination as! HelpViewController
+            recieverVC.helpScreen = 0
         }
     }
     
@@ -76,6 +81,10 @@ class LookupViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     @IBAction func backButton(_ sender: Any) {
         self.forwardSeg = false
         self.performSegue(withIdentifier: "backSegue", sender: nil)
+    }
+    
+    @IBAction func helpLookupButton(_ sender: UIButton) {
+        performSegue(withIdentifier: "helpLookupSegue", sender: nil)
     }
     
     
