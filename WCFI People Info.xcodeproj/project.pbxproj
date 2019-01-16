@@ -18,6 +18,9 @@
 		2D28DBE121E65F6300C8A4B2 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D28DBE021E65F6300C8A4B2 /* SignInViewController.swift */; };
 		2D28DBE321E660BA00C8A4B2 /* SignInTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D28DBE221E660BA00C8A4B2 /* SignInTableViewCell.swift */; };
 		2D28DBE521E8FAC300C8A4B2 /* UTUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D28DBE421E8FAC300C8A4B2 /* UTUtilities.swift */; };
+		2D28DBE721E97E0100C8A4B2 /* EditMembersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D28DBE621E97E0100C8A4B2 /* EditMembersViewController.swift */; };
+		2D2F83B221ED0DD5002AC448 /* EditMembersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2F83B121ED0DD5002AC448 /* EditMembersTableViewCell.swift */; };
+		2D2F83B421EE60CB002AC448 /* EditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2F83B321EE60CB002AC448 /* EditorViewController.swift */; };
 		2D3239BF21CFED9B006DFEA3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3239BE21CFED9B006DFEA3 /* AppDelegate.swift */; };
 		2D3239C121CFED9B006DFEA3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3239C021CFED9B006DFEA3 /* LoginViewController.swift */; };
 		2D3239C421CFED9B006DFEA3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D3239C221CFED9B006DFEA3 /* Main.storyboard */; };
@@ -40,6 +43,9 @@
 		2D28DBE021E65F6300C8A4B2 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		2D28DBE221E660BA00C8A4B2 /* SignInTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInTableViewCell.swift; sourceTree = "<group>"; };
 		2D28DBE421E8FAC300C8A4B2 /* UTUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UTUtilities.swift; sourceTree = "<group>"; };
+		2D28DBE621E97E0100C8A4B2 /* EditMembersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMembersViewController.swift; sourceTree = "<group>"; };
+		2D2F83B121ED0DD5002AC448 /* EditMembersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMembersTableViewCell.swift; sourceTree = "<group>"; };
+		2D2F83B321EE60CB002AC448 /* EditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorViewController.swift; sourceTree = "<group>"; };
 		2D3239BB21CFED9B006DFEA3 /* WCFI People Info.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WCFI People Info.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D3239BE21CFED9B006DFEA3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2D3239C021CFED9B006DFEA3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -73,6 +79,8 @@
 				2D07CDF321E167690089701D /* MenuViewController.swift */,
 				2D07CDF721E19BEA0089701D /* LookupViewController.swift */,
 				2D28DBE021E65F6300C8A4B2 /* SignInViewController.swift */,
+				2D28DBE621E97E0100C8A4B2 /* EditMembersViewController.swift */,
+				2D2F83B321EE60CB002AC448 /* EditorViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -85,6 +93,7 @@
 				2D28DBDA21E52C1A00C8A4B2 /* LookupTableViewCell.swift */,
 				2D28DBE221E660BA00C8A4B2 /* SignInTableViewCell.swift */,
 				2D28DBE421E8FAC300C8A4B2 /* UTUtilities.swift */,
+				2D2F83B121ED0DD5002AC448 /* EditMembersTableViewCell.swift */,
 			);
 			path = Modifiers;
 			sourceTree = "<group>";
@@ -310,15 +319,18 @@
 			files = (
 				2D28DBE321E660BA00C8A4B2 /* SignInTableViewCell.swift in Sources */,
 				2D28DBE521E8FAC300C8A4B2 /* UTUtilities.swift in Sources */,
+				2D28DBE721E97E0100C8A4B2 /* EditMembersViewController.swift in Sources */,
 				2D3239C121CFED9B006DFEA3 /* LoginViewController.swift in Sources */,
 				2D28DBDB21E52C1A00C8A4B2 /* LookupTableViewCell.swift in Sources */,
 				2D07CDF021E160D80089701D /* FadeSegue.swift in Sources */,
 				2D28DBD321E3ED4800C8A4B2 /* DLRadioButton.m in Sources */,
+				2D2F83B221ED0DD5002AC448 /* EditMembersTableViewCell.swift in Sources */,
 				2D28DBD921E4F8D000C8A4B2 /* TableViewController.swift in Sources */,
 				2D3239BF21CFED9B006DFEA3 /* AppDelegate.swift in Sources */,
 				2D07CDF621E18D7C0089701D /* SettingsViewController.swift in Sources */,
 				2D07CDF821E19BEA0089701D /* LookupViewController.swift in Sources */,
 				2D28DBE121E65F6300C8A4B2 /* SignInViewController.swift in Sources */,
+				2D2F83B421EE60CB002AC448 /* EditorViewController.swift in Sources */,
 				2D07CDF421E167690089701D /* MenuViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
