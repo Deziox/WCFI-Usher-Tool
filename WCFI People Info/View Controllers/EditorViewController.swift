@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import Foundation
+import Firebase
+import FirebaseFirestore
 
 class EditorViewController: UIViewController ,UIPickerViewDelegate,UIPickerViewDataSource{
     
@@ -23,6 +26,9 @@ class EditorViewController: UIViewController ,UIPickerViewDelegate,UIPickerViewD
     let bSG:[String] = ["Chester","Delaware","Ewing","Hamilton","Lodi","Monroe","North Brunswick","Princeton","Riegelsville","Somerset","Tinton"]
     let bSGtoIndex:[String:Int] = ["Chester":0,"Delaware":1,"Ewing":2,"Hamilton":3,"Lodi":4,"Monroe":5,"North Brunswick":6,"Princeton":7,"Riegelsville":8,"Somerset":9,"Tinton":10]
     //String(format: "%02d", myInt)
+    
+    let db = Firestore.firestore()
+    let util = UTUtilities()
     
     //MARK: Text fields
     @IBOutlet weak var firstNameText: UITextField!
@@ -86,6 +92,35 @@ class EditorViewController: UIViewController ,UIPickerViewDelegate,UIPickerViewD
         }
     }
     
+    func isValidEmail(emailAddressString: String) -> Bool {
+        if(emailAddressString.trimmingCharacters(in: .whitespaces) == "") {return true}
+        if(emailAddressString.filter { $0 == "@" }.count > 1) {return false}
+        var test = emailAddressString.split(separator: "@")
+        if(test.count == 2){
+            print(test)
+            if(test[1].split(separator: ".").count == 2){
+                return true
+            }
+        }
+        return false
+    }
+    
+    func isValidBirthday(testStr:String) -> Bool {
+        if(testStr.filter { $0 == "/" }.count > 1) {return false}
+        var test = testStr.split(separator: "/")
+        if(test.count == 2){
+            print("\(test)")
+            if(test[0].count == 2 && test[1].count == 2){
+                print("yas \(test)")
+                if(CharacterSet.decimalDigits.isSuperset(of: CharacterSet(charactersIn: String(test[0]))) && CharacterSet.decimalDigits.isSuperset(of: CharacterSet(charactersIn: String(test[1])))){
+                    print("yas2 \(test)")
+                    return true
+                }
+            }
+        }
+        return false
+    }
+    
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if(pickerView == birthdayPicker){
             let pickedMonth = month[pickerView.selectedRow(inComponent: 0)]
@@ -104,6 +139,57 @@ class EditorViewController: UIViewController ,UIPickerViewDelegate,UIPickerViewD
     
     @IBAction func saveButton(_ sender: UIButton) {
         
+        let letters = NSCharacterSet.letters
+        let alert = UIAlertController(title: "Saved Successfully", message: "Changes to Church member saved successfully", preferredStyle: UIAlertController.Style.alert)
+        if(firstNameText.text!.rangeOfCharacter(from: letters) == nil || firstNameText.text == ""){
+            alert.title = "Invalid First Name"
+            alert.message = "First name either contains numbers and symbols or is empty"
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }else if(lastNameText.text!.rangeOfCharacter(from: letters) == nil || lastNameText.text == ""){
+            alert.title = "Invalid Last Name"
+            alert.message = "Last name either contains numbers and symbols or is empty"
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }else if(!isValidEmail(emailAddressString: self.emailText.text!)){
+            alert.title = "Invalid Email Address"
+            alert.message = "Please enter a valid Email address"
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }else if(!isValidBirthday(testStr: self.birthdayText.text!)){
+            alert.title = "Invalid Birthday date"
+            alert.message = "Birthday must be in the format mm/dd"
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }else if(bibleStudy.rangeOfCharacter(from: letters) == nil){
+            alert.title = "Invalid Bible Study Group"
+            alert.message = "invalid bible study group"
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }else{
+            firstName = firstNameText.text ?? ""
+            lastName = lastNameText.text ?? ""
+            email = emailText.text ?? ""
+            birthday = birthdayText.text ?? "00/00"
+            bibleStudy = bibleStudyText.text ?? ""
+            
+            self.db.collection("Members").document(self.indexId).updateData([
+                "First":firstName,
+                "Last":lastName,
+                "Email":email,
+                "Birthday":birthday,
+                "BS":bibleStudy
+            ]){err in
+                if let err = err {
+                    print("Error updating document: \(err)")
+                } else {
+                    alert.title = "Changes Saved Successfully"
+                    alert.message = "Church member changes edited succesfully"
+                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                }
+            }
+        }
     }
     
     /*
