@@ -774,19 +774,57 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LJL-19-GSg">
-                                        <rect key="frame" x="8" y="0.0" width="38" height="44"/>
+                                        <rect key="frame" x="8" y="0.0" width="38" height="32"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                         <state key="normal" title="back"/>
                                         <connections>
                                             <action selector="backButton:" destination="D8y-eH-CT6" eventType="touchUpInside" id="j5E-Ju-rQi"/>
                                         </connections>
                                     </button>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="atd-Mo-Wyo">
+                                        <rect key="frame" x="132" y="8" width="137" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pQE-6d-Mrw" userLabel="Help">
+                                        <rect key="frame" x="338" y="8" width="29" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="29" id="nGb-CG-nlh"/>
+                                        </constraints>
+                                        <state key="normal" title="lol" image="help_icon"/>
+                                        <connections>
+                                            <action selector="helpLookupButton:" destination="XGv-g6-zbf" eventType="touchUpInside" id="dfJ-pb-LLH"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sgp-hG-NME">
+                                        <rect key="frame" x="277" y="8" width="53" height="30"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="Search"/>
+                                        <connections>
+                                            <action selector="searchButton:" destination="D8y-eH-CT6" eventType="touchUpInside" id="ThF-Lw-bf9"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.80875152350000001" green="0.91351181270000004" blue="0.92157202959999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
+                                    <constraint firstItem="pQE-6d-Mrw" firstAttribute="leading" secondItem="sgp-hG-NME" secondAttribute="trailing" constant="8" symbolic="YES" id="5sz-7B-8hQ"/>
+                                    <constraint firstItem="atd-Mo-Wyo" firstAttribute="baseline" secondItem="LJL-19-GSg" secondAttribute="baseline" id="ABO-tk-lbc"/>
                                     <constraint firstAttribute="bottom" secondItem="LJL-19-GSg" secondAttribute="bottom" id="Cw0-3H-drx"/>
+                                    <constraint firstItem="atd-Mo-Wyo" firstAttribute="top" secondItem="t1E-QF-qTh" secondAttribute="topMargin" id="FMU-Xa-vya"/>
+                                    <constraint firstItem="sgp-hG-NME" firstAttribute="leading" secondItem="atd-Mo-Wyo" secondAttribute="trailing" constant="8" symbolic="YES" id="HXz-K7-mZe"/>
                                     <constraint firstItem="LJL-19-GSg" firstAttribute="leading" secondItem="t1E-QF-qTh" secondAttribute="leading" constant="8" id="K3j-Ig-rHg"/>
+                                    <constraint firstAttribute="trailing" secondItem="pQE-6d-Mrw" secondAttribute="trailing" constant="8" id="NJG-06-mve"/>
+                                    <constraint firstItem="atd-Mo-Wyo" firstAttribute="leading" secondItem="LJL-19-GSg" secondAttribute="trailing" constant="86" id="YfA-mE-XYm"/>
+                                    <constraint firstItem="atd-Mo-Wyo" firstAttribute="firstBaseline" secondItem="LJL-19-GSg" secondAttribute="baseline" id="bHP-SU-ryH"/>
+                                    <constraint firstItem="pQE-6d-Mrw" firstAttribute="leading" secondItem="atd-Mo-Wyo" secondAttribute="trailing" constant="69" id="f6E-LU-zIq"/>
+                                    <constraint firstItem="atd-Mo-Wyo" firstAttribute="baseline" secondItem="LJL-19-GSg" secondAttribute="firstBaseline" id="g8C-7g-GXO"/>
+                                    <constraint firstAttribute="bottom" secondItem="atd-Mo-Wyo" secondAttribute="bottom" constant="6" id="gkL-OK-OwM"/>
                                     <constraint firstItem="LJL-19-GSg" firstAttribute="top" secondItem="t1E-QF-qTh" secondAttribute="top" id="hzx-Wg-aFI"/>
+                                    <constraint firstItem="sgp-hG-NME" firstAttribute="top" secondItem="pQE-6d-Mrw" secondAttribute="top" id="o9X-Bb-lwz"/>
+                                    <constraint firstItem="atd-Mo-Wyo" firstAttribute="top" secondItem="pQE-6d-Mrw" secondAttribute="top" id="pUt-PL-hdv"/>
+                                    <constraint firstItem="pQE-6d-Mrw" firstAttribute="top" secondItem="t1E-QF-qTh" secondAttribute="top" constant="8" id="sMg-Uj-P6D"/>
+                                    <constraint firstItem="atd-Mo-Wyo" firstAttribute="centerY" secondItem="pQE-6d-Mrw" secondAttribute="centerY" id="saH-iS-Tz9"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -804,13 +842,14 @@
                         <viewLayoutGuide key="safeArea" id="Nq3-Ny-LZT"/>
                     </view>
                     <connections>
+                        <outlet property="searchTextField" destination="atd-Mo-Wyo" id="z7i-1K-2ZD"/>
                         <outlet property="signInTableView" destination="Gb9-QY-IaK" id="oTy-b8-Llb"/>
                         <segue destination="Ija-fE-inz" kind="custom" identifier="backSegue" customClass="FadeSegue" customModule="WCFI_People_Info" customModuleProvider="target" id="i9Z-if-EXh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xsg-Hq-bDz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2921" y="-143"/>
+            <point key="canvasLocation" x="2920.8000000000002" y="-143.47826086956522"/>
         </scene>
         <!--Lookup-->
         <scene sceneID="CZK-K8-jjf">
@@ -1278,7 +1317,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="qen-dz-wde"/>
-        <segue reference="s8z-o2-HL3"/>
-        <segue reference="7OT-eu-GnL"/>
+        <segue reference="6NP-8u-zA2"/>
+        <segue reference="i9Z-if-EXh"/>
     </inferredMetricsTieBreakers>
 </document>

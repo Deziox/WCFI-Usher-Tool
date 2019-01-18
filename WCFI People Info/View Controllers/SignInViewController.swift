@@ -21,21 +21,22 @@ class SignInViewController: UIViewController {
     var attendance:[String:Bool] = [:]
     var attendanceData:[String:Bool] = [:]
     var date:(String,String) = ("","")
+    var searchStr:String = ""
     
     @IBOutlet weak var signInTableView: UITableView!
+    
+    @IBOutlet weak var searchTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         //self.signInTableView.reloadData()
         reset()
-        
     }
     
     func reset(){
         updateDate()
         checkAttendance()
-        print("te \(self.attendance)")
         updateAttendanceData()
         signInTableView.delegate = self
         signInTableView.dataSource = self
@@ -85,6 +86,12 @@ class SignInViewController: UIViewController {
         }
     }
     
+    @IBAction func searchButton(_ sender: Any) {
+        searchStr = self.searchTextField.text!
+        reset()
+        self.signInTableView.reloadData()
+    }
+    
     @IBAction func backButton(_ sender: Any) {
         performSegue(withIdentifier: "backSegue", sender: nil)
     }
@@ -117,12 +124,21 @@ extension SignInViewController: UITableViewDataSource, UITableViewDelegate{
     func loadData(){
         self.members = [:]
         self.finalMembers = []
+        self.sections = []
         self.db.collection("Members").getDocuments { (querySnapshot, err) in
             if let err = err{
                 print("Error getting documents: \(err)")
             }else {
                 if (self.members.isEmpty){
+                    self.numberOfMembers = 0
                     for document in querySnapshot!.documents {
+                        
+                        //(document.data()[self.category!] as! String).lowercased().range(of: self.searchParams!) != nil))
+                        if(self.searchStr.trimmingCharacters(in: .whitespaces) != ""){
+                            if(("\(document.data()["First"]!)\(document.data()["Last"]!)".lowercased().range(of: self.searchStr.lowercased())) == nil){
+                                continue
+                            }
+                        }
                         self.numberOfMembers += 1
                         if(!self.sections.contains(document.data()["Last"] as! String)){
                             self.sections.append(document.data()["Last"] as! String)
@@ -140,6 +156,7 @@ extension SignInViewController: UITableViewDataSource, UITableViewDelegate{
                 }
             }
             self.signInTableView.reloadData()
+            //self.searchStr = ""
         }
     }
     
