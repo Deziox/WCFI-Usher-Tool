@@ -1,36 +1,19 @@
 //
-//  EditorViewController.swift
+//  AddNewMemberViewController.swift
 //  WCFI People Info
 //
-//  Created by DeZiox on 1/15/19.
+//  Created by DeZiox on 1/17/19.
 //  Copyright © 2019 DeZiox. All rights reserved.
 //
 
 import UIKit
-import Foundation
 import Firebase
 import FirebaseFirestore
 
-class EditorViewController: UIViewController ,UIPickerViewDelegate,UIPickerViewDataSource{
-    
-
-    var firstName:String = ""
-    var lastName:String = ""
-    var email:String = ""
-    var birthday:String = ""
-    var bibleStudy:String = ""
-    var indexId:String = ""
-    
-    let month:[String] = (Array(1...12)).map{ String(format: "%02d", $0) }
-    let day:[String] = (Array(1...31)).map{ String(format: "%02d", $0) }
-    let bSG:[String] = ["Chester","Delaware","Ewing","Hamilton","Lodi","Monroe","North Brunswick","Princeton","Riegelsville","Somerset","Tinton"]
-    let bSGtoIndex:[String:Int] = ["Chester":0,"Delaware":1,"Ewing":2,"Hamilton":3,"Lodi":4,"Monroe":5,"North Brunswick":6,"Princeton":7,"Riegelsville":8,"Somerset":9,"Tinton":10]
-    //String(format: "%02d", myInt)
+class AddNewMemberViewController: UIViewController, UIPickerViewDelegate,UIPickerViewDataSource {
     
     let db = Firestore.firestore()
-    let util = UTUtilities()
     
-    //MARK: Text fields
     @IBOutlet weak var firstNameText: UITextField!
     @IBOutlet weak var lastNameText: UITextField!
     @IBOutlet weak var emailText: UITextField!
@@ -40,25 +23,37 @@ class EditorViewController: UIViewController ,UIPickerViewDelegate,UIPickerViewD
     let birthdayPicker = UIPickerView()
     let bSGPicker = UIPickerView()
     
+    let month:[String] = (Array(1...12)).map{ String(format: "%02d", $0) }
+    let day:[String] = (Array(1...31)).map{ String(format: "%02d", $0) }
+    let bSG:[String] = ["Chester","Delaware","Ewing","Hamilton","Lodi","Monroe","North Brunswick","Princeton","Riegelsville","Somerset","Tinton"]
+    let bSGtoIndex:[String:Int] = ["Chester":0,"Delaware":1,"Ewing":2,"Hamilton":3,"Lodi":4,"Monroe":5,"North Brunswick":6,"Princeton":7,"Riegelsville":8,"Somerset":9,"Tinton":10]
+    
+    var indexLength:Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+
         // Do any additional setup after loading the view.
-        firstNameText.text = firstName
-        lastNameText.text = lastName
-        emailText.text = email
-        birthdayText.text = birthday
-        bibleStudyText.text = bibleStudy
-        
         birthdayPicker.delegate = self
         birthdayText.inputView = birthdayPicker
-        birthdayPicker.selectRow(Int(birthday.prefix(2))! - 1, inComponent: 0, animated: true)
-        birthdayPicker.selectRow(Int(birthday.suffix(2))! - 1, inComponent: 1, animated: true)
+        birthdayPicker.selectRow(0, inComponent: 0, animated: true)
+        birthdayPicker.selectRow(0, inComponent: 1, animated: true)
         
         bSGPicker.delegate = self
-        bSGPicker.selectRow(bSGtoIndex[bibleStudy]!, inComponent: 0, animated: true)
+        bSGPicker.selectRow(0, inComponent: 0, animated: true)
         bibleStudyText.inputView = bSGPicker
+        
+        db.collection("Metadata").document("metadata").getDocument { (document, error) in
+            print("test")
+            if let document = document, document.exists {
+                let dataDescription:Int = Int(document.data()?["length"] as! String)!
+                self.indexLength = dataDescription
+            } else {
+                print("Document does not exist")
+            }
+        }
     }
-
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         if(pickerView == birthdayPicker){
             return 2
@@ -91,11 +86,22 @@ class EditorViewController: UIViewController ,UIPickerViewDelegate,UIPickerViewD
         }
     }
     
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if(pickerView == birthdayPicker){
+            let pickedMonth = month[pickerView.selectedRow(inComponent: 0)]
+            let pickedDay = day[pickerView.selectedRow(inComponent: 1)]
+            birthdayText.text = "\(pickedMonth)/\(pickedDay)"
+        }else{
+            bibleStudyText.text = bSG[row]
+        }
+    }
+    
     func isValidEmail(emailAddressString: String) -> Bool {
         if(emailAddressString.trimmingCharacters(in: .whitespaces) == "") {return true}
         if(emailAddressString.filter { $0 == "@" }.count > 1) {return false}
         var test = emailAddressString.split(separator: "@")
         if(test.count == 2){
+            print(test)
             if(test[1].split(separator: ".").count == 2){
                 return true
             }
@@ -107,8 +113,11 @@ class EditorViewController: UIViewController ,UIPickerViewDelegate,UIPickerViewD
         if(testStr.filter { $0 == "/" }.count > 1) {return false}
         var test = testStr.split(separator: "/")
         if(test.count == 2){
+            print("\(test)")
             if(test[0].count == 2 && test[1].count == 2){
+                print("yas \(test)")
                 if(CharacterSet.decimalDigits.isSuperset(of: CharacterSet(charactersIn: String(test[0]))) && CharacterSet.decimalDigits.isSuperset(of: CharacterSet(charactersIn: String(test[1])))){
+                    print("yas2 \(test)")
                     return true
                 }
             }
@@ -116,24 +125,7 @@ class EditorViewController: UIViewController ,UIPickerViewDelegate,UIPickerViewD
         return false
     }
     
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        if(pickerView == birthdayPicker){
-            let pickedMonth = month[pickerView.selectedRow(inComponent: 0)]
-            let pickedDay = day[pickerView.selectedRow(inComponent: 1)]
-            birthday = "\(pickedMonth)/\(pickedDay)"
-            birthdayText.text = birthday
-        }else{
-            bibleStudy = bSG[row]
-            bibleStudyText.text = bibleStudy
-        }
-    }
-    
-    @IBAction func backButton(_ sender: UIButton) {
-        performSegue(withIdentifier: "backEditAddSegue", sender: nil)
-    }
-    
-    @IBAction func saveButton(_ sender: UIButton) {
-        
+    @IBAction func addNewMemberButton(_ sender: UIButton) {
         let letters = NSCharacterSet.letters
         let alert = UIAlertController(title: "Saved Successfully", message: "Changes to Church member saved successfully", preferredStyle: UIAlertController.Style.alert)
         if(firstNameText.text!.rangeOfCharacter(from: letters) == nil || firstNameText.text == ""){
@@ -156,35 +148,36 @@ class EditorViewController: UIViewController ,UIPickerViewDelegate,UIPickerViewD
             alert.message = "Birthday must be in the format mm/dd"
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
-        }else if(bibleStudy.rangeOfCharacter(from: letters) == nil){
+        }else if(bibleStudyText.text!.rangeOfCharacter(from: letters) == nil){
             alert.title = "Invalid Bible Study Group"
             alert.message = "invalid bible study group"
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }else{
-            firstName = firstNameText.text ?? ""
-            lastName = lastNameText.text ?? ""
-            email = emailText.text ?? ""
-            birthday = birthdayText.text ?? "00/00"
-            bibleStudy = bibleStudyText.text ?? ""
-            
-            self.db.collection("Members").document(self.indexId).updateData([
-                "First":firstName,
-                "Last":lastName,
-                "Email":email,
-                "Birthday":birthday,
-                "BS":bibleStudy
+            self.db.collection("Metadata").document("metadata").updateData([
+                "length":String(self.indexLength + 1)
+            ])
+            self.db.collection("Members").document(String(self.indexLength + 1)).setData([
+                "First":firstNameText.text!,
+                "Last":lastNameText.text!,
+                "Email":emailText.text!,
+                "Birthday":birthdayText.text!,
+                "BS":bibleStudyText.text!
             ]){err in
                 if let err = err {
                     print("Error updating document: \(err)")
                 } else {
-                    alert.title = "Changes Saved Successfully"
-                    alert.message = "Church member changes edited succesfully"
+                    alert.title = "New Member added"
+                    alert.message = "Successfully added new member"
                     alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
                     self.present(alert, animated: true, completion: nil)
                 }
             }
         }
+    }
+    
+    @IBAction func backAddNewMemberButton(_ sender: UIButton) {
+        performSegue(withIdentifier: "backAddNewSegue", sender: nil)
     }
     
     /*

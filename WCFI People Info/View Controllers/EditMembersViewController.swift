@@ -60,7 +60,6 @@ class EditMembersViewController: UIViewController {
             if let err = err{
                 print("Error getting documents: \(err)")
             }else {
-                print(self.testThing)
                 if (self.testThing.isEmpty){
                     for document in querySnapshot!.documents {
                         var data = document.data()
@@ -87,7 +86,7 @@ class EditMembersViewController: UIViewController {
     }
     
     @IBAction func addNewMemberButton(_ sender: UIButton) {
-        //deleteMember(id: "1")
+        performSegue(withIdentifier: "addNewMemberSegue", sender: nil)
     }
     
     func deleteMember(id: String){
@@ -145,8 +144,6 @@ extension EditMembersViewController: UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "EditIdentifier", for: indexPath) as! EditMembersTableViewCell
-        print(indexPath.row)
-        print(testThing[indexPath.row])
         cell.selectionStyle = UITableViewCell.SelectionStyle.none
         if(!self.testThing.isEmpty){
             let txt = "\(testThing[indexPath.row]["First"]!) \(testThing[indexPath.row]["Last"]!)"

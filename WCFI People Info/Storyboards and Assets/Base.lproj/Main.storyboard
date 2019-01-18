@@ -547,10 +547,10 @@
             </objects>
             <point key="canvasLocation" x="3988" y="771"/>
         </scene>
-        <!--View Controller-->
+        <!--Add New Member View Controller-->
         <scene sceneID="Up8-vg-vUf">
             <objects>
-                <viewController id="DtH-Sf-NN4" sceneMemberID="viewController">
+                <viewController id="DtH-Sf-NN4" customClass="AddNewMemberViewController" customModule="WCFI_People_Info" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ght-vN-acC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -581,7 +581,7 @@
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="back"/>
                                         <connections>
-                                            <action selector="backButton:" destination="pca-2s-8VI" eventType="touchUpInside" id="2Yb-HB-YHf"/>
+                                            <action selector="backAddNewMemberButton:" destination="DtH-Sf-NN4" eventType="touchUpInside" id="j7d-00-P0d"/>
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="J2c-lX-CiS">
@@ -687,6 +687,7 @@
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="Add new member"/>
                                         <connections>
+                                            <action selector="addNewMemberButton:" destination="DtH-Sf-NN4" eventType="touchUpInside" id="Ikg-RL-TZY"/>
                                             <action selector="saveButton:" destination="pca-2s-8VI" eventType="touchUpInside" id="a3A-cD-yrs"/>
                                         </connections>
                                     </button>
@@ -733,6 +734,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8Zp-5L-IOm"/>
                     </view>
+                    <connections>
+                        <outlet property="bibleStudyText" destination="m6m-P6-1xG" id="b2a-wQ-XoM"/>
+                        <outlet property="birthdayText" destination="6Mg-cf-NBP" id="tQU-b4-j4F"/>
+                        <outlet property="emailText" destination="zHu-YQ-Pgo" id="LX6-RA-mB7"/>
+                        <outlet property="firstNameText" destination="5cJ-eN-WTQ" id="CdG-eP-9hE"/>
+                        <outlet property="lastNameText" destination="61g-R2-NXB" id="Cg4-RV-T7T"/>
+                        <segue destination="HHB-ix-thN" kind="custom" identifier="backAddNewSegue" customClass="FadeSegue" customModule="WCFI_People_Info" customModuleProvider="target" id="qen-dz-wde"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UbD-Vh-exb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1268,8 +1277,7 @@
         <image name="help_icon" width="326.5" height="326.5"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="L3c-cn-V9R"/>
-        <segue reference="pnk-M4-YKW"/>
+        <segue reference="qen-dz-wde"/>
         <segue reference="s8z-o2-HL3"/>
         <segue reference="7OT-eu-GnL"/>
     </inferredMetricsTieBreakers>
