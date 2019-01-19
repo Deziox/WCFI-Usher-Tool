@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import FirebaseFirestore
 
-class SignInViewController: UIViewController {
+class SignInViewController: UIViewController,UITextFieldDelegate{
     
     var sections:[String] = []
     var members:[String:[String]] = [:]
@@ -31,6 +31,7 @@ class SignInViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         //self.signInTableView.reloadData()
+        searchTextField.delegate = self
         reset()
     }
     
@@ -60,14 +61,12 @@ class SignInViewController: UIViewController {
     
     func updateDate(){
         let formatter = DateFormatter()
-        // initially set the format based on your datepicker date / server String
         formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         let myString = formatter.string(from: Date())
         let yourDate = formatter.date(from: myString)
         formatter.dateFormat = "dd-MMM-yyyy"
         let myStringafd = formatter.string(from: yourDate!)
         let mySubstring = myStringafd.prefix(6).suffix(3)
-        //let finDate = "\(self.util.month[String(mySubstring)]!)/\(myStringafd.prefix(2))"
         self.date = (self.util.month[String(mySubstring)]!,String(myStringafd.prefix(2)))
         print("date tester: \(self.date)")
     }
@@ -81,7 +80,6 @@ class SignInViewController: UIViewController {
                     //print(document.data()["Attendance"] as! Bool)
                     self.attendance[(document.data()["indexId"] as! String)] = (document.data()["Attendance"] as! Bool)
                 }
-                //print(self.attendance)
             }
         }
     }
@@ -167,6 +165,11 @@ extension SignInViewController: UITableViewDataSource, UITableViewDelegate{
         print("wut \(test)")
         self.finalMembers = test
         print("finished sorting: \(self.finalMembers)")
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

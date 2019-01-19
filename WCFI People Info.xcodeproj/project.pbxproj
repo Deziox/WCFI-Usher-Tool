@@ -20,6 +20,7 @@
 		2D28DBE521E8FAC300C8A4B2 /* UTUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D28DBE421E8FAC300C8A4B2 /* UTUtilities.swift */; };
 		2D28DBE721E97E0100C8A4B2 /* EditMembersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D28DBE621E97E0100C8A4B2 /* EditMembersViewController.swift */; };
 		2D2BB5A821F134D40088E3CC /* AddNewMemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2BB5A721F134D40088E3CC /* AddNewMemberViewController.swift */; };
+		2D2BB5AA21F2AAC90088E3CC /* GuestSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2BB5A921F2AAC90088E3CC /* GuestSignInViewController.swift */; };
 		2D2F83B221ED0DD5002AC448 /* EditMembersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2F83B121ED0DD5002AC448 /* EditMembersTableViewCell.swift */; };
 		2D2F83B421EE60CB002AC448 /* EditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2F83B321EE60CB002AC448 /* EditorViewController.swift */; };
 		2D2F83B621EF9522002AC448 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2F83B521EF9522002AC448 /* HelpViewController.swift */; };
@@ -47,6 +48,7 @@
 		2D28DBE421E8FAC300C8A4B2 /* UTUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UTUtilities.swift; sourceTree = "<group>"; };
 		2D28DBE621E97E0100C8A4B2 /* EditMembersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMembersViewController.swift; sourceTree = "<group>"; };
 		2D2BB5A721F134D40088E3CC /* AddNewMemberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewMemberViewController.swift; sourceTree = "<group>"; };
+		2D2BB5A921F2AAC90088E3CC /* GuestSignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestSignInViewController.swift; sourceTree = "<group>"; };
 		2D2F83B121ED0DD5002AC448 /* EditMembersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMembersTableViewCell.swift; sourceTree = "<group>"; };
 		2D2F83B321EE60CB002AC448 /* EditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorViewController.swift; sourceTree = "<group>"; };
 		2D2F83B521EF9522002AC448 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 				2D28DBE621E97E0100C8A4B2 /* EditMembersViewController.swift */,
 				2D2F83B321EE60CB002AC448 /* EditorViewController.swift */,
 				2D2BB5A721F134D40088E3CC /* AddNewMemberViewController.swift */,
+				2D2BB5A921F2AAC90088E3CC /* GuestSignInViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -332,6 +335,7 @@
 				2D28DBD321E3ED4800C8A4B2 /* DLRadioButton.m in Sources */,
 				2D2F83B221ED0DD5002AC448 /* EditMembersTableViewCell.swift in Sources */,
 				2D28DBD921E4F8D000C8A4B2 /* TableViewController.swift in Sources */,
+				2D2BB5AA21F2AAC90088E3CC /* GuestSignInViewController.swift in Sources */,
 				2D3239BF21CFED9B006DFEA3 /* AppDelegate.swift in Sources */,
 				2D07CDF621E18D7C0089701D /* SettingsViewController.swift in Sources */,
 				2D2F83B621EF9522002AC448 /* HelpViewController.swift in Sources */,

@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import FirebaseFirestore
 
-class AddNewMemberViewController: UIViewController, UIPickerViewDelegate,UIPickerViewDataSource {
+class AddNewMemberViewController: UIViewController, UIPickerViewDelegate,UIPickerViewDataSource, UITextFieldDelegate{
     
     let db = Firestore.firestore()
     
@@ -42,6 +42,10 @@ class AddNewMemberViewController: UIViewController, UIPickerViewDelegate,UIPicke
         bSGPicker.delegate = self
         bSGPicker.selectRow(0, inComponent: 0, animated: true)
         bibleStudyText.inputView = bSGPicker
+        
+        firstNameText.delegate = self
+        lastNameText.delegate = self
+        emailText.delegate = self
         
         db.collection("Metadata").document("metadata").getDocument { (document, error) in
             print("test")
@@ -122,6 +126,11 @@ class AddNewMemberViewController: UIViewController, UIPickerViewDelegate,UIPicke
                 }
             }
         }
+        return false
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
         return false
     }
     

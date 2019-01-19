@@ -11,7 +11,7 @@ import Foundation
 import Firebase
 import FirebaseFirestore
 
-class EditorViewController: UIViewController ,UIPickerViewDelegate,UIPickerViewDataSource{
+class EditorViewController: UIViewController ,UIPickerViewDelegate,UIPickerViewDataSource, UITextFieldDelegate{
     
 
     var firstName:String = ""
@@ -57,6 +57,15 @@ class EditorViewController: UIViewController ,UIPickerViewDelegate,UIPickerViewD
         bSGPicker.delegate = self
         bSGPicker.selectRow(bSGtoIndex[bibleStudy]!, inComponent: 0, animated: true)
         bibleStudyText.inputView = bSGPicker
+        
+        firstNameText.delegate = self
+        lastNameText.delegate = self
+        emailText.delegate = self
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
 
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

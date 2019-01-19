@@ -254,11 +254,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WCFI People Info/View Controllers/SignInViewController.swift"
-            timestampString = "569478835.367372"
+            timestampString = "569558304.395723"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "134"
-            endingLineNumber = "134"
+            startingLineNumber = "132"
+            endingLineNumber = "132"
             landmarkName = "loadData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -270,11 +270,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WCFI People Info/View Controllers/SignInViewController.swift"
-            timestampString = "569478835.367901"
+            timestampString = "569558304.3958091"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "113"
-            endingLineNumber = "113"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
             landmarkName = "numberOfSections(in:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -286,11 +286,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WCFI People Info/View Controllers/SignInViewController.swift"
-            timestampString = "569478835.368228"
+            timestampString = "569558304.395874"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "119"
-            endingLineNumber = "119"
+            startingLineNumber = "117"
+            endingLineNumber = "117"
             landmarkName = "tableView(_:numberOfRowsInSection:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -302,11 +302,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WCFI People Info/View Controllers/SignInViewController.swift"
-            timestampString = "569478835.368668"
+            timestampString = "569558304.395938"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "124"
-            endingLineNumber = "124"
+            startingLineNumber = "122"
+            endingLineNumber = "122"
             landmarkName = "loadData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -318,13 +318,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WCFI People Info/View Controllers/SignInViewController.swift"
-            timestampString = "569478835.36914"
+            timestampString = "569558304.3960021"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "184"
-            endingLineNumber = "184"
-            landmarkName = "tableView(_:titleForHeaderInSection:)"
-            landmarkType = "7">
+            startingLineNumber = "187"
+            endingLineNumber = "187"
+            landmarkName = "SignInViewController"
+            landmarkType = "21">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -334,11 +334,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WCFI People Info/View Controllers/SignInViewController.swift"
-            timestampString = "569478835.369589"
+            timestampString = "569558304.396059"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "194"
-            endingLineNumber = "194"
+            startingLineNumber = "197"
+            endingLineNumber = "197"
             landmarkName = "tableView(_:didSelectRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -350,11 +350,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WCFI People Info/View Controllers/SignInViewController.swift"
-            timestampString = "569478835.369963"
+            timestampString = "569558304.396117"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "163"
-            endingLineNumber = "163"
+            startingLineNumber = "161"
+            endingLineNumber = "161"
             landmarkName = "sortMembers()"
             landmarkType = "7">
          </BreakpointContent>
@@ -366,7 +366,23 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WCFI People Info/View Controllers/SignInViewController.swift"
-            timestampString = "569478835.370307"
+            timestampString = "569558304.396173"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "146"
+            endingLineNumber = "146"
+            landmarkName = "loadData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WCFI People Info/View Controllers/SignInViewController.swift"
+            timestampString = "569558304.3962311"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "148"
@@ -382,12 +398,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WCFI People Info/View Controllers/SignInViewController.swift"
-            timestampString = "569478835.370616"
+            timestampString = "569558304.396288"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "150"
-            endingLineNumber = "150"
-            landmarkName = "loadData()"
+            startingLineNumber = "160"
+            endingLineNumber = "160"
+            landmarkName = "sortMembers()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -398,27 +414,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WCFI People Info/View Controllers/SignInViewController.swift"
-            timestampString = "569478835.3713289"
+            timestampString = "569558304.396345"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "162"
-            endingLineNumber = "162"
-            landmarkName = "SignInViewController"
-            landmarkType = "21">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "WCFI People Info/View Controllers/SignInViewController.swift"
-            timestampString = "569478835.371915"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "172"
-            endingLineNumber = "172"
+            startingLineNumber = "175"
+            endingLineNumber = "175"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -430,12 +430,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WCFI People Info/View Controllers/SignInViewController.swift"
-            timestampString = "569478835.37229"
+            timestampString = "569558304.396402"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "237"
-            endingLineNumber = "237"
+            startingLineNumber = "240"
+            endingLineNumber = "240"
             landmarkName = "tableView(_:didSelectRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WCFI People Info/View Controllers/EditMembersViewController.swift"
+            timestampString = "569558304.3964601"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

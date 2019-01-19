@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 import FirebaseFirestore
-class EditMembersViewController: UIViewController {
+class EditMembersViewController: UIViewController, UITextFieldDelegate{
     
     var testThing:[[String:Any]] = []
     var sendData:[String:Any] = [:]
@@ -20,7 +20,10 @@ class EditMembersViewController: UIViewController {
     var cellToDel:EditMembersTableViewCell = EditMembersTableViewCell()
     var cellToDelIndexPath:IndexPath?
     
+    var searchStr:String = ""
+    
     @IBOutlet weak var editTableView: UITableView!
+    @IBOutlet weak var searchTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +45,8 @@ class EditMembersViewController: UIViewController {
             }
         }))
         
+        searchTextField.delegate = self
+        
         reset()
     }
     
@@ -62,6 +67,11 @@ class EditMembersViewController: UIViewController {
             }else {
                 if (self.testThing.isEmpty){
                     for document in querySnapshot!.documents {
+                        if(self.searchStr.trimmingCharacters(in: .whitespaces) != ""){
+                            if(("\(document.data()["First"]!)\(document.data()["Last"]!)".lowercased().range(of: self.searchStr.lowercased())) == nil){
+                                continue
+                            }
+                        }
                         var data = document.data()
                         data["indexId"] = document.documentID
                         self.testThing.append(data)
@@ -81,6 +91,12 @@ class EditMembersViewController: UIViewController {
         
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
+
+    
     @IBAction func backButton(_ sender: UIButton) {
         performSegue(withIdentifier: "backEditSegue", sender: nil)
     }
@@ -88,6 +104,13 @@ class EditMembersViewController: UIViewController {
     @IBAction func addNewMemberButton(_ sender: UIButton) {
         performSegue(withIdentifier: "addNewMemberSegue", sender: nil)
     }
+    
+    @IBAction func searchButton(_ sender: UIButton) {
+        searchStr = self.searchTextField.text!
+        reset()
+        self.editTableView.reloadData()
+    }
+    
     
     func deleteMember(id: String){
         for i in 0...(self.testThing.count - 1){

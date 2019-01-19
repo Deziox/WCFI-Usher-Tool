@@ -34,9 +34,8 @@ class MenuViewController: UIViewController {
     }
     
     @IBAction func guestSignIn(_ sender: UIButton) {
-        
+        performSegue(withIdentifier: "guestSignInSegue", sender: nil)
     }
-    
     
     /*
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -45,5 +44,4 @@ class MenuViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }

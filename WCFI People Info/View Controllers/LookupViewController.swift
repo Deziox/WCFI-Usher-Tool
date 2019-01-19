@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import FirebaseFirestore
 
-class LookupViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class LookupViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource,UITextFieldDelegate{
     
     let myPickerData = ["Last Name","First Name","Email","Birthday","BS Group"]
     var initLabelText = "Last Name"
@@ -41,6 +41,8 @@ class LookupViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         //let thePicker = UIPickerView()
+        self.searchParamsTF.delegate = self
+        
         self.forwardSeg = true
         self.pickerViewShower.isHidden = true
         self.pickerViewShower.alpha = 0
@@ -58,6 +60,11 @@ class LookupViewController: UIViewController, UIPickerViewDelegate, UIPickerView
             let recieverVC = segue.destination as! HelpViewController
             recieverVC.helpScreen = 0
         }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
     
     @IBAction func searchButton(_ sender: UIButton) {
