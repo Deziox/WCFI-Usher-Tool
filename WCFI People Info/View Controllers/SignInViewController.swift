@@ -229,6 +229,7 @@ extension SignInViewController: UITableViewDataSource, UITableViewDelegate{
                 self.db.collection("AttendanceData").document("\(indexDate) \(indexId)").updateData([
                     "Attendance":att
                 ])
+                //self.db.collection("AttendanceData").document("\(indexDate) \(indexId)").delete()
             }else{
                 //  add to database; set to value of att
                 self.db.collection("AttendanceData").document("\(indexDate) \(indexId)").setData([

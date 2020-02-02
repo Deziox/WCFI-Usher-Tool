@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ija-fE-inz">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -92,7 +92,7 @@
                     <navigationItem key="navigationItem" id="tpe-n5-yqd"/>
                     <connections>
                         <outlet property="passText" destination="1JN-Lt-Dej" id="2t1-Uw-UaP"/>
-                        <segue destination="Ija-fE-inz" kind="custom" identifier="menuSegue" customClass="FadeSegue" customModule="WCFI_People_Info" customModuleProvider="target" id="3d0-TR-ppU"/>
+                        <segue destination="Ija-fE-inz" kind="presentation" identifier="menuSegue" modalTransitionStyle="crossDissolve" id="3d0-TR-ppU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -239,12 +239,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="MbP-sc-HFV"/>
                     </view>
+                    <navigationItem key="navigationItem" id="NTh-KE-RBr"/>
                     <connections>
-                        <segue destination="Wtt-6G-Kv1" kind="custom" identifier="settingsSegue" customClass="FadeSegue" customModule="WCFI_People_Info" customModuleProvider="target" id="KVr-cF-GAe"/>
-                        <segue destination="XGv-g6-zbf" kind="presentation" identifier="lookupSegue" modalTransitionStyle="flipHorizontal" id="RO3-Qa-BNJ"/>
-                        <segue destination="D8y-eH-CT6" kind="custom" identifier="signSegue" customClass="FadeSegue" customModule="WCFI_People_Info" customModuleProvider="target" id="IeK-lL-g5A"/>
-                        <segue destination="HHB-ix-thN" kind="custom" identifier="editSegue" customClass="FadeSegue" customModule="WCFI_People_Info" customModuleProvider="target" id="pWa-kJ-XzW"/>
-                        <segue destination="C0h-6c-6gl" kind="custom" identifier="guestSignInSegue" customClass="FadeSegue" customModule="WCFI_People_Info" customModuleProvider="target" id="19L-Ij-sMZ"/>
+                        <segue destination="Wtt-6G-Kv1" kind="presentation" identifier="settingsSegue" customClass="FadeSegue" customModule="WCFI_People_Info" customModuleProvider="target" modalTransitionStyle="crossDissolve" id="KVr-cF-GAe"/>
+                        <segue destination="XGv-g6-zbf" kind="presentation" identifier="lookupSegue" modalTransitionStyle="crossDissolve" id="RO3-Qa-BNJ"/>
+                        <segue destination="D8y-eH-CT6" kind="presentation" identifier="signSegue" modalTransitionStyle="crossDissolve" id="IeK-lL-g5A"/>
+                        <segue destination="HHB-ix-thN" kind="presentation" identifier="editSegue" modalTransitionStyle="crossDissolve" id="pWa-kJ-XzW"/>
+                        <segue destination="C0h-6c-6gl" kind="presentation" identifier="guestSignInSegue" modalTransitionStyle="crossDissolve" id="19L-Ij-sMZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4ej-Ew-vF8" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -321,7 +322,7 @@
                     </view>
                     <connections>
                         <outlet property="tutorialText" destination="E4a-oa-tN1" id="WSj-EA-52o"/>
-                        <segue destination="XGv-g6-zbf" kind="custom" identifier="backHelpLookupSegue" customClass="FadeSegue" customModule="WCFI_People_Info" customModuleProvider="target" id="s8z-o2-HL3"/>
+                        <segue destination="XGv-g6-zbf" kind="presentation" identifier="backHelpLookupSegue" modalTransitionStyle="crossDissolve" id="s8z-o2-HL3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="etJ-bi-PlV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -515,7 +516,7 @@
                         <outlet property="emailText" destination="H5h-g7-oKN" id="wOI-ru-Pm8"/>
                         <outlet property="firstNameText" destination="UcZ-zc-hHt" id="MnY-Or-fDg"/>
                         <outlet property="lastNameText" destination="Em5-oI-Gt6" id="mcD-Yc-rdi"/>
-                        <segue destination="HHB-ix-thN" kind="custom" identifier="backEditAddSegue" customClass="FadeSegue" customModule="WCFI_People_Info" customModuleProvider="target" id="pnk-M4-YKW"/>
+                        <segue destination="HHB-ix-thN" kind="presentation" identifier="backEditAddSegue" modalTransitionStyle="crossDissolve" id="pnk-M4-YKW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vwf-l2-GW9" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -710,7 +711,7 @@
                         <outlet property="emailText" destination="zHu-YQ-Pgo" id="LX6-RA-mB7"/>
                         <outlet property="firstNameText" destination="5cJ-eN-WTQ" id="CdG-eP-9hE"/>
                         <outlet property="lastNameText" destination="61g-R2-NXB" id="Cg4-RV-T7T"/>
-                        <segue destination="HHB-ix-thN" kind="custom" identifier="backAddNewSegue" customClass="FadeSegue" customModule="WCFI_People_Info" customModuleProvider="target" id="qen-dz-wde"/>
+                        <segue destination="HHB-ix-thN" kind="presentation" identifier="backAddNewSegue" modalTransitionStyle="crossDissolve" id="qen-dz-wde"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UbD-Vh-exb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -813,7 +814,7 @@
                     <connections>
                         <outlet property="searchTextField" destination="atd-Mo-Wyo" id="z7i-1K-2ZD"/>
                         <outlet property="signInTableView" destination="Gb9-QY-IaK" id="oTy-b8-Llb"/>
-                        <segue destination="Ija-fE-inz" kind="custom" identifier="backSegue" customClass="FadeSegue" customModule="WCFI_People_Info" customModuleProvider="target" id="i9Z-if-EXh"/>
+                        <segue destination="Ija-fE-inz" kind="presentation" identifier="backSegue" modalTransitionStyle="crossDissolve" id="i9Z-if-EXh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xsg-Hq-bDz" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -967,7 +968,7 @@
                         <outlet property="emailText" destination="fDn-4L-a52" id="D3Q-cN-9Af"/>
                         <outlet property="firstNameText" destination="Orc-mn-SJw" id="tQt-cx-h8d"/>
                         <outlet property="lastNameText" destination="nZ9-r9-Mpa" id="aLj-Ak-UbF"/>
-                        <segue destination="Ija-fE-inz" kind="custom" identifier="backGuestSegue" customClass="FadeSegue" customModule="WCFI_People_Info" customModuleProvider="target" id="WKZ-B3-JN9"/>
+                        <segue destination="Ija-fE-inz" kind="presentation" identifier="backGuestSegue" modalTransitionStyle="crossDissolve" id="WKZ-B3-JN9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="seU-4M-TyV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1150,9 +1151,9 @@
                         <outlet property="categoryLabel" destination="M0D-89-rze" id="xE3-Cy-WJc"/>
                         <outlet property="pickerViewShower" destination="mnh-8t-dss" id="r35-iM-C1H"/>
                         <outlet property="searchParamsTF" destination="hFf-BD-nja" id="wT7-XQ-727"/>
-                        <segue destination="pED-v3-huQ" kind="custom" identifier="searchedSegue" customClass="FadeSegue" customModule="WCFI_People_Info" customModuleProvider="target" id="ptQ-4T-atI"/>
-                        <segue destination="Ija-fE-inz" kind="custom" identifier="backSegue" customClass="FadeSegue" customModule="WCFI_People_Info" customModuleProvider="target" id="nTC-0w-GUm"/>
-                        <segue destination="gbh-BO-oGq" kind="custom" identifier="helpLookupSegue" customClass="FadeSegue" customModule="WCFI_People_Info" customModuleProvider="target" id="mZp-TP-Z8C"/>
+                        <segue destination="pED-v3-huQ" kind="presentation" identifier="searchedSegue" modalTransitionStyle="crossDissolve" id="ptQ-4T-atI"/>
+                        <segue destination="Ija-fE-inz" kind="presentation" identifier="backSegue" modalTransitionStyle="crossDissolve" id="nTC-0w-GUm"/>
+                        <segue destination="gbh-BO-oGq" kind="presentation" identifier="helpLookupSegue" modalTransitionStyle="crossDissolve" id="mZp-TP-Z8C"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V68-u0-sWx" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1218,7 +1219,7 @@
                         </connections>
                     </tableView>
                     <connections>
-                        <segue destination="XGv-g6-zbf" kind="custom" identifier="backSegue" customClass="FadeSegue" customModule="WCFI_People_Info" customModuleProvider="target" id="6NP-8u-zA2"/>
+                        <segue destination="XGv-g6-zbf" kind="presentation" identifier="backSegue" modalTransitionStyle="crossDissolve" id="6NP-8u-zA2"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3It-4Z-8lg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1311,8 +1312,8 @@
                         <viewLayoutGuide key="safeArea" id="Xmg-vP-RuN"/>
                     </view>
                     <connections>
-                        <segue destination="Ija-fE-inz" kind="custom" identifier="menuSegue" customClass="FadeSegue" customModule="WCFI_People_Info" customModuleProvider="target" id="BGw-5P-W0u"/>
-                        <segue destination="BYZ-38-t0r" kind="custom" identifier="logOutSegue" customClass="FadeSegue" customModule="WCFI_People_Info" customModuleProvider="target" id="vug-e7-erS"/>
+                        <segue destination="Ija-fE-inz" kind="presentation" identifier="menuSegue" modalTransitionStyle="crossDissolve" id="BGw-5P-W0u"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="logOutSegue" modalTransitionStyle="crossDissolve" id="vug-e7-erS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xN4-yD-IkY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1331,28 +1332,28 @@
                                 <rect key="frame" x="16" y="0.0" width="343" height="647"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WCFI" translatesAutoresizingMaskIntoConstraints="NO" id="LFt-YB-7Nb">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="33"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="32"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Usher's tool" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4fh-ib-QWl">
-                                        <rect key="frame" x="0.0" y="41" width="343" height="48"/>
+                                        <rect key="frame" x="0.0" y="40" width="343" height="48"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="40"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit/Add Members" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5kP-CD-s95">
-                                        <rect key="frame" x="0.0" y="97" width="343" height="24"/>
+                                        <rect key="frame" x="0.0" y="96" width="343" height="24"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="select member to edit or add new member" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BrT-Al-EkA">
-                                        <rect key="frame" x="0.0" y="129" width="343" height="17"/>
+                                        <rect key="frame" x="0.0" y="128" width="343" height="17"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SxA-mL-chP">
-                                        <rect key="frame" x="0.0" y="194" width="343" height="358"/>
+                                        <rect key="frame" x="0.0" y="193" width="343" height="358"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="358" id="6jK-6F-sdi"/>
@@ -1371,7 +1372,7 @@
                                         </prototypes>
                                     </tableView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o4W-fC-Pd7">
-                                        <rect key="frame" x="0.0" y="560" width="343" height="30"/>
+                                        <rect key="frame" x="0.0" y="559" width="343" height="30"/>
                                         <color key="backgroundColor" red="1" green="0.49327188729999999" blue="0.47399842739999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="Add new member"/>
@@ -1380,7 +1381,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nLW-VK-rCJ">
-                                        <rect key="frame" x="8" y="0.0" width="36" height="33"/>
+                                        <rect key="frame" x="8" y="0.0" width="36" height="32"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="back"/>
                                         <connections>
@@ -1388,12 +1389,12 @@
                                         </connections>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IeF-re-iJK">
-                                        <rect key="frame" x="8" y="154" width="163" height="30"/>
+                                        <rect key="frame" x="8" y="153" width="163" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="upL-cg-ueA">
-                                        <rect key="frame" x="179" y="154" width="52" height="30"/>
+                                        <rect key="frame" x="179" y="153" width="52" height="30"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="Search"/>
                                         <connections>
@@ -1401,9 +1402,22 @@
                                             <action selector="searchButton:" destination="D8y-eH-CT6" eventType="touchUpInside" id="jO9-2M-ePk"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0wu-5t-lKt" userLabel="Help">
+                                        <rect key="frame" x="305" y="0.0" width="32" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="32" id="ikJ-bv-HGb"/>
+                                            <constraint firstAttribute="width" constant="32" id="poa-Os-yEK"/>
+                                        </constraints>
+                                        <state key="normal" title="lol" image="help_icon"/>
+                                        <connections>
+                                            <action selector="helpLookupButton:" destination="XGv-g6-zbf" eventType="touchUpInside" id="LwS-9Z-0in"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="0wu-5t-lKt" secondAttribute="trailing" constant="6" id="0qJ-46-U6B"/>
                                     <constraint firstItem="SxA-mL-chP" firstAttribute="top" secondItem="IeF-re-iJK" secondAttribute="bottom" constant="10" id="20M-Y0-yDG"/>
+                                    <constraint firstItem="0wu-5t-lKt" firstAttribute="bottom" secondItem="nLW-VK-rCJ" secondAttribute="bottom" id="25G-L0-nRz"/>
                                     <constraint firstItem="SxA-mL-chP" firstAttribute="top" secondItem="upL-cg-ueA" secondAttribute="bottom" constant="10" id="2HD-MU-BlL"/>
                                     <constraint firstItem="5kP-CD-s95" firstAttribute="leading" secondItem="BrT-Al-EkA" secondAttribute="leading" id="5Tb-nz-Xgi"/>
                                     <constraint firstItem="o4W-fC-Pd7" firstAttribute="top" secondItem="SxA-mL-chP" secondAttribute="bottom" constant="8" symbolic="YES" id="DY2-2z-MOk"/>
@@ -1418,6 +1432,7 @@
                                     <constraint firstItem="SxA-mL-chP" firstAttribute="leading" secondItem="o4W-fC-Pd7" secondAttribute="leading" id="PCm-ZK-60M"/>
                                     <constraint firstItem="5kP-CD-s95" firstAttribute="trailing" secondItem="BrT-Al-EkA" secondAttribute="trailing" id="Vbf-rM-uUp"/>
                                     <constraint firstItem="LFt-YB-7Nb" firstAttribute="bottom" secondItem="nLW-VK-rCJ" secondAttribute="bottom" id="Vxx-W4-bqk"/>
+                                    <constraint firstItem="0wu-5t-lKt" firstAttribute="centerY" secondItem="nLW-VK-rCJ" secondAttribute="centerY" id="YKe-qk-NXp"/>
                                     <constraint firstAttribute="trailing" secondItem="IeF-re-iJK" secondAttribute="trailing" constant="172" id="avH-8f-oza"/>
                                     <constraint firstItem="upL-cg-ueA" firstAttribute="top" secondItem="BrT-Al-EkA" secondAttribute="bottom" constant="8" id="bdn-Iz-6vR"/>
                                     <constraint firstItem="nLW-VK-rCJ" firstAttribute="top" secondItem="ZNO-WH-mSP" secondAttribute="top" id="d93-p3-HaK"/>
@@ -1433,27 +1448,15 @@
                                     <constraint firstItem="o4W-fC-Pd7" firstAttribute="leading" secondItem="ZNO-WH-mSP" secondAttribute="leading" id="v9H-uk-8u8"/>
                                     <constraint firstItem="nLW-VK-rCJ" firstAttribute="leading" secondItem="ZNO-WH-mSP" secondAttribute="leading" constant="8" id="yMT-pu-sq0"/>
                                     <constraint firstItem="LFt-YB-7Nb" firstAttribute="top" secondItem="ZNO-WH-mSP" secondAttribute="top" id="yPk-fR-BvH"/>
+                                    <constraint firstAttribute="trailing" secondItem="0wu-5t-lKt" secondAttribute="trailing" constant="6" id="yVt-9o-Ipq"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0wu-5t-lKt" userLabel="Help">
-                                <rect key="frame" x="323" y="1" width="29" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="29" id="5wQ-lc-YJv"/>
-                                </constraints>
-                                <state key="normal" title="lol" image="help_icon"/>
-                                <connections>
-                                    <action selector="helpLookupButton:" destination="XGv-g6-zbf" eventType="touchUpInside" id="LwS-9Z-0in"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.80875152350000001" green="0.91351181270000004" blue="0.92157202959999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="0wu-5t-lKt" firstAttribute="leading" secondItem="GN3-1L-McC" secondAttribute="leading" constant="323" id="5CW-ig-wAf"/>
-                            <constraint firstItem="0wu-5t-lKt" firstAttribute="top" secondItem="GN3-1L-McC" secondAttribute="top" constant="1" id="Cvz-MM-h6R"/>
                             <constraint firstItem="ZNO-WH-mSP" firstAttribute="top" secondItem="GN3-1L-McC" secondAttribute="top" id="F7J-7P-qe5"/>
                             <constraint firstItem="ZNO-WH-mSP" firstAttribute="trailing" secondItem="sAn-L8-dr1" secondAttribute="trailingMargin" id="ckj-17-nwU"/>
                             <constraint firstItem="ZNO-WH-mSP" firstAttribute="leading" secondItem="sAn-L8-dr1" secondAttribute="leadingMargin" id="dEl-d7-bO9"/>
-                            <constraint firstItem="GN3-1L-McC" firstAttribute="bottom" secondItem="0wu-5t-lKt" secondAttribute="bottom" constant="616" id="g1p-qh-qnR"/>
                             <constraint firstAttribute="bottom" secondItem="ZNO-WH-mSP" secondAttribute="bottom" constant="20" symbolic="YES" id="pWZ-v5-2cS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="GN3-1L-McC"/>
@@ -1461,9 +1464,9 @@
                     <connections>
                         <outlet property="editTableView" destination="SxA-mL-chP" id="WgQ-6P-pv7"/>
                         <outlet property="searchTextField" destination="IeF-re-iJK" id="DQP-b7-8Xu"/>
-                        <segue destination="Ija-fE-inz" kind="custom" identifier="backEditSegue" customClass="FadeSegue" customModule="WCFI_People_Info" customModuleProvider="target" id="7OT-eu-GnL"/>
-                        <segue destination="pca-2s-8VI" kind="custom" identifier="editMemberSegue" customClass="FadeSegue" customModule="WCFI_People_Info" customModuleProvider="target" id="L3c-cn-V9R"/>
-                        <segue destination="DtH-Sf-NN4" kind="custom" identifier="addNewMemberSegue" customClass="FadeSegue" customModule="WCFI_People_Info" customModuleProvider="target" id="nlu-U3-DXi"/>
+                        <segue destination="Ija-fE-inz" kind="presentation" identifier="backEditSegue" modalTransitionStyle="crossDissolve" id="7OT-eu-GnL"/>
+                        <segue destination="pca-2s-8VI" kind="presentation" identifier="editMemberSegue" modalTransitionStyle="crossDissolve" id="L3c-cn-V9R"/>
+                        <segue destination="DtH-Sf-NN4" kind="presentation" identifier="addNewMemberSegue" modalTransitionStyle="crossDissolve" id="nlu-U3-DXi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A81-4f-s4r" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1478,6 +1481,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="pWa-kJ-XzW"/>
         <segue reference="RO3-Qa-BNJ"/>
-        <segue reference="3d0-TR-ppU"/>
+        <segue reference="7OT-eu-GnL"/>
     </inferredMetricsTieBreakers>
 </document>

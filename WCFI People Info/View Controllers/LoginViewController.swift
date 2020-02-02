@@ -22,6 +22,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        //FirebaseApp.configure()
         passText.delegate = self
         
         self.db.collection("Metadata").document("loginInfo").getDocument{
@@ -64,6 +65,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate{
                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
             }
+            
             /*
             Auth.auth().signIn(withEmail: "wcfiusher", password: passText.text!) { (user, error) in
                 

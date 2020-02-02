@@ -462,8 +462,8 @@
             timestampString = "569558304.396402"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "240"
-            endingLineNumber = "240"
+            startingLineNumber = "241"
+            endingLineNumber = "241"
             landmarkName = "tableView(_:didSelectRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -499,6 +499,193 @@
             endingLineNumber = "22"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "036F9ADD-F9F9-4F87-9188-EB99CC0D6DEB"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WCFI People Info/Modifiers/AppDelegate.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "application(_:didFinishLaunchingWithOptions:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E064CCDA-47BB-42A0-A48A-7A807E4FD454"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WCFI People Info/Modifiers/AppDelegate.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "AppDelegate"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "E064CCDA-47BB-42A0-A48A-7A807E4FD454 - 637768457e2e414b"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "WCFI_People_Info.AppDelegate.__allocating_init() -&gt; WCFI_People_Info.AppDelegate"
+                  moduleName = "WCFI People Info"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/deziox/Documents/git/WCFI-Usher-Tool/WCFI%20People%20Info/Modifiers/AppDelegate.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  uuid = "E064CCDA-47BB-42A0-A48A-7A807E4FD454 - 7303680479c12b6b"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "WCFI_People_Info.AppDelegate.init() -&gt; WCFI_People_Info.AppDelegate"
+                  moduleName = "WCFI People Info"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/deziox/Documents/git/WCFI-Usher-Tool/WCFI%20People%20Info/Modifiers/AppDelegate.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  uuid = "E064CCDA-47BB-42A0-A48A-7A807E4FD454 - 1a0aa8983f7a2f85"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "WCFI_People_Info.AppDelegate.__deallocating_deinit"
+                  moduleName = "WCFI People Info"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/deziox/Documents/git/WCFI-Usher-Tool/WCFI%20People%20Info/Modifiers/AppDelegate.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  uuid = "E064CCDA-47BB-42A0-A48A-7A807E4FD454 - 2994bce54aaf129f"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "main"
+                  moduleName = "WCFI People Info"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/deziox/Documents/git/WCFI-Usher-Tool/WCFI%20People%20Info/Modifiers/AppDelegate.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "15">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "94F1405F-00A5-418D-8303-4903FC06F265"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WCFI People Info/View Controllers/MenuViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "11"
+            endingLineNumber = "11"
+            landmarkName = "MenuViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "94F1405F-00A5-418D-8303-4903FC06F265 - 1551c20e6e7062ef"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "WCFI_People_Info.MenuViewController.__allocating_init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; WCFI_People_Info.MenuViewController"
+                  moduleName = "WCFI People Info"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/deziox/Documents/git/WCFI-Usher-Tool/WCFI%20People%20Info/View%20Controllers/MenuViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  uuid = "94F1405F-00A5-418D-8303-4903FC06F265 - f67aef74062608b4"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "WCFI_People_Info.MenuViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; WCFI_People_Info.MenuViewController"
+                  moduleName = "WCFI People Info"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/deziox/Documents/git/WCFI-Usher-Tool/WCFI%20People%20Info/View%20Controllers/MenuViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "359">
+               </Location>
+               <Location
+                  uuid = "94F1405F-00A5-418D-8303-4903FC06F265 - 812728ceb33bbed"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "WCFI_People_Info.MenuViewController.__allocating_init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;WCFI_People_Info.MenuViewController&gt;"
+                  moduleName = "WCFI People Info"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/deziox/Documents/git/WCFI-Usher-Tool/WCFI%20People%20Info/View%20Controllers/MenuViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  uuid = "94F1405F-00A5-418D-8303-4903FC06F265 - 222f3cf748d5396a"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "WCFI_People_Info.MenuViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;WCFI_People_Info.MenuViewController&gt;"
+                  moduleName = "WCFI People Info"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/deziox/Documents/git/WCFI-Usher-Tool/WCFI%20People%20Info/View%20Controllers/MenuViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "228">
+               </Location>
+               <Location
+                  uuid = "94F1405F-00A5-418D-8303-4903FC06F265 - 511e0aabb804af77"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "WCFI_People_Info.MenuViewController.__deallocating_deinit"
+                  moduleName = "WCFI People Info"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/deziox/Documents/git/WCFI-Usher-Tool/WCFI%20People%20Info/View%20Controllers/MenuViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
