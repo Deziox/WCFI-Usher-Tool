@@ -8,19 +8,30 @@
 
 import UIKit
 import FirebaseAuth
+import Firebase
+import FirebaseFirestore
 
 class LoginViewController: UIViewController,UITextFieldDelegate{
 
     //MARK: Login
     @IBOutlet weak var passText: UITextField!
-    @IBOutlet weak var userText: UITextField!
     
+    let db = Firestore.firestore()
+    var password:String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         passText.delegate = self
-        userText.delegate = self
+        
+        self.db.collection("Metadata").document("loginInfo").getDocument{
+            (document,error) in
+            if let document = document, document.exists {
+                self.password = document.data()!["pwaosrsd"] as! String
+            } else {
+                print("loginInfo does not exist in database")
+            }
+        }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -38,13 +49,23 @@ class LoginViewController: UIViewController,UITextFieldDelegate{
     }
     
     func login(){
-        if (self.passText.text == "" || self.userText.text == ""){
-            let alert = UIAlertController(title: "Email or password contains nothing", message: "Email and/or password cannot be left empty", preferredStyle: UIAlertController.Style.alert)
+        if (self.passText.text == ""){
+            let alert = UIAlertController(title: "password contains nothing", message: "password cannot be left empty", preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         } else {
             
-            Auth.auth().signIn(withEmail: userText.text!, password: passText.text!) { (user, error) in
+            if(passText.text! == self.password){
+                print("Ay yeet")
+                self.performSegue(withIdentifier: "menuSegue", sender: nil)
+            }else{
+                print("Nah chief")
+                let alert = UIAlertController(title: "Email or password incorrect", message: "Email/password combo incorrect", preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            }
+            /*
+            Auth.auth().signIn(withEmail: "wcfiusher", password: passText.text!) { (user, error) in
                 
                 if(error == nil){
                     print("Ay yeet")
@@ -57,7 +78,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate{
                 }
                 
             }
-            
+            */
         }
     }
 
